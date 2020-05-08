@@ -15,26 +15,34 @@
             </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" color="indigo darken-2">
-            <v-layout column align-center>
-                <v-flex class="mt-5">
-                    <v-btn class="white--text" icon>
-                        <p>MyAccount</p>
-                        <v-icon>mdi-account-details</v-icon>
-                    </v-btn>
-                </v-flex>
-            </v-layout>
-            <v-list>
-                <v-list-item>
-                    <v-list-item-action>
-                        <p>Ovdje budu išle neke rute</p>
-                    </v-list-item-action>
+        <v-navigation-drawer app temporary v-model="drawer" color="indigo darken-2">
+            <v-list dense nav class="py-0">
+                <v-list-item two-line :class="miniVariant && 'px-0'">
+                    <v-list-item-avatar>
+                        <p>Slika accounta</p>
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                        <v-list-item-title class="white--text">
+                            Moj account
+                        </v-list-item-title>
+                        <v-list-item-icon>
+                            <v-icon color="white">mdi-account-details</v-icon>
+                        </v-list-item-icon>
+                    </v-list-item-content>
                 </v-list-item>
-                <v-list-item>
-                    <v-list-item-action>
-                        <p>Još neke rute</p>
-                    </v-list-item-action>
+
+                <v-divider></v-divider>
+
+                <v-list-item two-line>
+                    <v-list-item-icon>
+                        <v-icon color="white">mdi-calendar</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content class="white--text">
+                        <v-list-item-title>Eventi po datutima recimo</v-list-item-title>
+                    </v-list-item-content>
                 </v-list-item>
+
             </v-list>
         </v-navigation-drawer>
     </div>
