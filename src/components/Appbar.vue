@@ -43,6 +43,15 @@
                     </v-list-item-content>
                 </v-list-item>
 
+                <v-list-item two-line>
+                    <v-list-item-icon>
+                        <v-icon color="white">mdi-plus-box</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content class="white--text">
+                        <v-list-item-title>Neke dodante rute</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+
             </v-list>
         </v-navigation-drawer>
     </div>
