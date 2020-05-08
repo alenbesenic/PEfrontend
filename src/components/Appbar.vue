@@ -17,7 +17,7 @@
 
         <v-navigation-drawer app temporary v-model="drawer" color="indigo darken-2">
             <v-list dense nav class="py-0">
-                <v-list-item two-line :class="miniVariant && 'px-0'">
+                <v-list-item two-line class='px-0'>
                     <v-list-item-avatar>
                         <img src="./avatar.jpg">
                     </v-list-item-avatar>
