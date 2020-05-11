@@ -30,7 +30,7 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
+                    label="Username"
                     name="login"
                     
                     type="text"
