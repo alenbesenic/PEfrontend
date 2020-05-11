@@ -2,7 +2,7 @@
     <div>
         <v-app-bar class="white--text" color="indigo darken-2">
             <v-app-bar-nav-icon class="white--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
-            <router-link to="/"><v-toolbar-title>PulaEvents</v-toolbar-title></router-link>
+            <router-link to="/"><v-toolbar-title><img src="favicon.png"></v-toolbar-title></router-link>
 
             <v-spacer></v-spacer>
 
