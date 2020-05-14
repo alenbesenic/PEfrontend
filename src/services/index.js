@@ -17,9 +17,12 @@ let Events = {
                 event_price: doc.Event_Price,
                 event_url: doc.Event_URL,
                 category: doc.Category,
-                status: doc.Status
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
             }
         })
+        console.log("Podaci s backenda", events)
         return events;
     }
 }
