@@ -24,34 +24,27 @@
 
                     <v-list-item-content>
                         <v-list-item-title class="white--text">
-                            Moj account
+                            <v-list-item-icon>
+                                <v-icon color="white">mdi-account-details</v-icon>
+                                MyAccount
+                            </v-list-item-icon>
                         </v-list-item-title>
-                        <v-list-item-icon>
-                            <v-icon color="white">mdi-account-details</v-icon>
-                        </v-list-item-icon>
+                        
                     </v-list-item-content>
                 </v-list-item>
 
                 <v-divider></v-divider>
 
-                <v-list-item two-line>
-                    <v-list-item-icon>
-                        <v-icon color="white">mdi-calendar</v-icon>
-                    </v-list-item-icon>
+                <v-list-item v-for="link in links" :key="link.text" route :to="link.route" two-line>
                     <v-list-item-content class="white--text">
-                        <v-list-item-title>Eventi po datutima recimo</v-list-item-title>
+                        <v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon color="white">{{link.icon}}</v-icon>
+                            </v-list-item-icon>
+                            {{link.text}}
+                        </v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-
-                <v-list-item two-line>
-                    <v-list-item-icon>
-                        <v-icon color="white">mdi-plus-box</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content class="white--text">
-                        <v-list-item-title>Neke dodante rute</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
             </v-list>
         </v-navigation-drawer>
     </div>
@@ -61,7 +54,12 @@
 export default {
     data(){
         return{
-            drawer:false
+            drawer:false,
+            links:[
+                {icon:'mdi-calendar', text:'Upcoming Events', route:'/UpcomingEvents'},
+                {icon:'mdi-close-circle', text:'Canceled Events', route:'/CanceledEvents'},
+                {icon:'mdi-format-list-checkbox', text:'Categories', route:'/Categories'}
+            ],
         }
     }
 }

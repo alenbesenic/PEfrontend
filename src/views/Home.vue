@@ -9,7 +9,8 @@
           <v-card-subtitle class="pb-0">Date: {{event.date}}     Price:{{event.event_price}}</v-card-subtitle>
 
           <v-card-text class="text--primary">
-            <div>{{event.location}}</div>
+            <div>Location: {{event.location}}</div>
+            <br>
             <div>{{event.description}}</div>
           </v-card-text>
 

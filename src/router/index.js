@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
+import UpcomingEvents from '../views/UpcomingEvents.vue'
+import CanceledEvents from '../views/CanceledEvents.vue'
+import Categories from '../views/Categories.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +32,21 @@ Vue.use(VueRouter)
     path:'/Signup',
     name:'Signup',
     component:Signup
+  },
+  {
+    path:'/UpcomingEvents',
+    name:'UpcomingEvents',
+    component:UpcomingEvents
+  },
+  {
+    path:'/CanceledEvents',
+    name:'CanceledEvents',
+    component:CanceledEvents
+  },
+  {
+    path:'/Categories',
+    name:'Categories',
+    component:Categories
   }
 ]
 
