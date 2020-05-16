@@ -7,6 +7,8 @@ import UpcomingEvents from '../views/UpcomingEvents.vue'
 import CanceledEvents from '../views/CanceledEvents.vue'
 import Categories from '../views/Categories.vue'
 import Nightlife from '../views/Categories/Nightlife.vue'
+import Outdoor from '../views/Categories/Outdoor.vue'
+import Library from '../views/Categories/Library.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -52,6 +54,16 @@ Vue.use(VueRouter)
     path:'/Nightlife',
     name:'Nightlife',
     component:Nightlife
+  },
+  {
+    path:'/Outdoor',
+    name:'Outdoor',
+    component:Outdoor
+  },
+  {
+    path:'/Library',
+    name:'Library',
+    component:Library
   },
   {
     path:'/:id',
