@@ -6,7 +6,7 @@ import Signup from '../views/Signup.vue'
 import UpcomingEvents from '../views/UpcomingEvents.vue'
 import CanceledEvents from '../views/CanceledEvents.vue'
 import Categories from '../views/Categories.vue'
-
+import Nightlife from '../views/Categories/Nightlife.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -47,6 +47,11 @@ Vue.use(VueRouter)
     path:'/Categories',
     name:'Categories',
     component:Categories
+  },
+  {
+    path:'/Nightlife',
+    name:'Nightlife',
+    component:Nightlife
   },
   {
     path:'/:id',

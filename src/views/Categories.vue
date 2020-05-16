@@ -2,7 +2,7 @@
     <v-container fluid>
     <v-row>
         <v-card class="mx-auto" max-width="400" v-for="cat in categories" :key="cat.title" outlined>
-            <v-image :src="cat.picture" router-link :to="cat.route"></v-image>
+            <v-img :src="cat.picture" router-link :to="cat.route"></v-img>
          <v-card-title>
              {{cat.title}}
          </v-card-title>
@@ -17,9 +17,9 @@ export default {
     data(){
         return{
             categories:[
-                {title:'Outdor', picture:'../components/catpicture/libra', route:'/Libray'},
-                {title:'Nightlife'},
-                {title:'Library'}
+                {title:'Outdor', picture:'https://www.tramontana-outdoor.com/wp-content/uploads/2019/04/2-4.jpg', route:'/Nightlife'},
+                {title:'Nightlife', picture:'https://www.cvitanic.info/wp-content/uploads/2015/01/nightlife-7.jpg',  route:'@/Nightlife.vue'},
+                {title:'Library', picture:'https://internova.hr/wp-content/uploads/2019/03/internova_public_library_01.jpg', route:'/Libray'}
             ]
         }
     }
