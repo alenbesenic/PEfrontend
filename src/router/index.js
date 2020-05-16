@@ -47,6 +47,12 @@ Vue.use(VueRouter)
     path:'/Categories',
     name:'Categories',
     component:Categories
+  },
+  {
+    path:'/:id',
+    name:'popup',
+    props:true,
+    component:()=>import(/* webpackChunkName: "popup" */ '../components/Popup.vue')
   }
 ]
 

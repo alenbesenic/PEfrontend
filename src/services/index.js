@@ -24,6 +24,23 @@ let Events = {
         })
         console.log("Podaci s backenda", events)
         return events;
+    },
+    async getOneEvent(id){
+        let response = await Service.get(`/events/${id}`)
+        let event = response.data
+        return{
+            id: event.id,
+            date: event.Date,
+            description: event.Description,
+            event_name: event.Event_Name,
+            event_price: event.Event_Price,
+            event_url: event.Event_URL,
+            category: event.Category,
+            status: event.Status,
+            picture_url: event.PictureURL,
+            location: event.Location
+        }
+       
     }
 }
 
