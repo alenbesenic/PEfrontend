@@ -59,6 +59,42 @@ let Events = {
             }
         })
        return events;
+    },
+    async getOutdoor(){
+        let response = await Service.get(`/category/outdoor`)
+        let events = response.data.map(doc=>{
+            return{
+                id: doc.id,
+                date: doc.Date,
+                description: doc.Description,
+                event_name: doc.Event_Name,
+                event_price: doc.Event_Price,
+                event_url: doc.Event_URL,
+                category: doc.Category,
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
+            }
+        })
+       return events;
+    },
+    async getLibrary(){
+        let response = await Service.get(`/category/library`)
+        let events = response.data.map(doc=>{
+            return{
+                id: doc.id,
+                date: doc.Date,
+                description: doc.Description,
+                event_name: doc.Event_Name,
+                event_price: doc.Event_Price,
+                event_url: doc.Event_URL,
+                category: doc.Category,
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
+            }
+        })
+       return events;
     }
 }
 
