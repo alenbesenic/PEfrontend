@@ -23,7 +23,7 @@
                 </v-btn>
               </template>
               <v-card class="mx-auto" max-width="600" max-height="600" outlined>
-                <v-img class="white--text align-end" height="200px" :src="event.picture_url"></v-img>
+                <v-img class="white--text align-end" :src="event.picture_url" contain></v-img>
                   <v-card-title>
                     {{event.event_name}}
                   </v-card-title>
