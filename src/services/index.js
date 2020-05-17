@@ -96,6 +96,26 @@ let Events = {
         })
        return events;
     },
+    async getCanceledEvents(){
+        let response = await Service.get('/canceledEvents')
+        console.log(response.data)
+        let canceled = response.data.map(doc=>{
+            return{
+                id: doc.id,
+                date: doc.Date,
+                description: doc.Description,
+                event_name: doc.Event_Name,
+                event_price: doc.Event_Price,
+                event_url: doc.Event_URL,
+                category: doc.Category,
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
+            }
+        })
+        return canceled;
+       
+    },
     /*async getUpcomingEvents(){
         let response = await Service.get('/upcomingEvents')
         let upcomingEvents = response.data.map(doc=>{
