@@ -9,7 +9,7 @@ module.exports={
   outputDir: path.resolve(__dirname, '../PE/public'),
   devServer:{
     proxy:{
-      '/PE':{
+      '/src':{
         target: 'http://localhost:3000'
       }
     }
