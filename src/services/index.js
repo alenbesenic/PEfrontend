@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let Service = axios.create({
-    baseURL:"http://localhost:3000",
+    baseURL:"",
     timeout:1000
 })
 
