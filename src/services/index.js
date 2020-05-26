@@ -1,16 +1,16 @@
 import axios from 'axios'
 
 let Service = axios.create({
-    baseURL:"",
-    timeout:1000
+    baseURL: "",
+    timeout: 1000
 })
 
 let Events = {
-    async getAllEvents(){
+    async getAllEvents() {
         let response = await Service.get('/events');
-        let events = response.data.map(doc=>{
-            return{
-                id: doc.id,
+        let events = response.data.map(doc => {
+            return {
+                id: doc._id,
                 date: doc.Date,
                 description: doc.Description,
                 event_name: doc.Event_Name,
@@ -25,11 +25,11 @@ let Events = {
         console.log("Podaci s backenda", events)
         return events;
     },
-    async getOneEvent(id){
+    async getOneEvent(id) {
         let response = await Service.get(`/events/${id}`)
         let event = response.data
-        return{
-            id: event.id,
+        return {
+            id: event._id,
             date: event.Date,
             description: event.Description,
             event_name: event.Event_Name,
@@ -40,13 +40,13 @@ let Events = {
             picture_url: event.PictureURL,
             location: event.Location
         }
-       
+
     },
-    async getNightlife(){
+    async getNightlife() {
         let response = await Service.get(`/category/nightlife`)
-        let events = response.data.map(doc=>{
-            return{
-                id: doc.id,
+        let events = response.data.map(doc => {
+            return {
+                id: doc._id,
                 date: doc.Date,
                 description: doc.Description,
                 event_name: doc.Event_Name,
@@ -58,13 +58,13 @@ let Events = {
                 location: doc.Location
             }
         })
-       return events;
+        return events;
     },
-    async getOutdoor(){
+    async getOutdoor() {
         let response = await Service.get(`/category/outdoor`)
-        let events = response.data.map(doc=>{
-            return{
-                id: doc.id,
+        let events = response.data.map(doc => {
+            return {
+                id: doc._id,
                 date: doc.Date,
                 description: doc.Description,
                 event_name: doc.Event_Name,
@@ -76,13 +76,13 @@ let Events = {
                 location: doc.Location
             }
         })
-       return events;
+        return events;
     },
-    async getLibrary(){
+    async getLibrary() {
         let response = await Service.get(`/category/library`)
-        let events = response.data.map(doc=>{
-            return{
-                id: doc.id,
+        let events = response.data.map(doc => {
+            return {
+                id: doc._id,
                 date: doc.Date,
                 description: doc.Description,
                 event_name: doc.Event_Name,
@@ -94,14 +94,14 @@ let Events = {
                 location: doc.Location
             }
         })
-       return events;
+        return events;
     },
-    async getCanceledEvents(){
+    async getCanceledEvents() {
         let response = await Service.get('/canceledEvents')
         console.log(response.data)
-        let canceled = response.data.map(doc=>{
-            return{
-                id: doc.id,
+        let canceled = response.data.map(doc => {
+            return {
+                id: doc._id,
                 date: doc.Date,
                 description: doc.Description,
                 event_name: doc.Event_Name,
@@ -114,7 +114,7 @@ let Events = {
             }
         })
         return canceled;
-       
+
     },
     /*async getUpcomingEvents(){
         let response = await Service.get('/upcomingEvents')
@@ -137,4 +137,4 @@ let Events = {
     */
 }
 
-export {Service, Events}
+export { Service, Events }
