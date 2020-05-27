@@ -96,8 +96,8 @@ let Events = {
         })
         return events;
     },
-    async getCanceledEvents() {
-        let response = await Service.get('/canceledEvents')
+    async getCanceledEvents(status) {
+        let response = await Service.get(`/events?status=${status}`)
         console.log(response.data)
         let canceled = response.data.map(doc => {
             return {

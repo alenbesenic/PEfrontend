@@ -62,6 +62,9 @@ export default {
       this.events = await Events.getCanceledEvents()
       console.log("Canceled", this.events)
     },
+    goToEventPage(a){
+      window.open(a)
+    }
   }
 }
 </script>
