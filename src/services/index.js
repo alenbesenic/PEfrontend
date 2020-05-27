@@ -97,6 +97,7 @@ let Events = {
         return events;
     },
     async getCanceledEvents(status) {
+        status = "Canceled"
         let response = await Service.get(`/events?status=${status}`)
         console.log(response.data)
         let canceled = response.data.map(doc => {
@@ -116,10 +117,11 @@ let Events = {
         return canceled;
 
     },
-    /*async getUpcomingEvents(){
-        let response = await Service.get('/upcomingEvents')
-        let upcomingEvents = response.data.map(doc=>{
-            return{
+    async getUpcomingEvents(date) {
+        date = Date.now()
+        let response = await Service.get(`/events?date=${date}`)
+        let upcomingEvents = response.data.map(doc => {
+            return {
                 id: doc.id,
                 date: doc.Date,
                 description: doc.Description,
@@ -134,7 +136,6 @@ let Events = {
         })
         return upcomingEvents
     }
-    */
 }
 
 export { Service, Events }
