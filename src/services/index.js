@@ -11,7 +11,7 @@ let Events = {
         let events = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date,
+                date: (new Date(doc.Date_Start)).toLocaleDateString(),
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -30,7 +30,7 @@ let Events = {
         let event = response.data
         return {
             id: event._id,
-            date: event.Date,
+            date: event.Date_Start,
             description: event.Description,
             event_name: event.Event_Name,
             event_price: event.Event_Price,
@@ -47,7 +47,7 @@ let Events = {
         let events = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date,
+                date: doc.Date_Start,
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -65,7 +65,7 @@ let Events = {
         let events = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date,
+                date: doc.Date_Start,
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -83,7 +83,7 @@ let Events = {
         let events = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date,
+                date: doc.Date_Start,
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -103,7 +103,7 @@ let Events = {
         let canceled = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date,
+                date: doc.Date_Start,
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -123,7 +123,7 @@ let Events = {
         let upcomingEvents = response.data.map(doc => {
             return {
                 id: doc.id,
-                date: doc.Date,
+                date: (new Date(doc.Date_Start)).toLocaleDateString(),
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
