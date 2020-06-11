@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 import Appbar from './components/Appbar.vue'
 
 export default {
@@ -21,5 +22,8 @@ export default {
   data: () => ({
     //
   }),
+  mounted (){
+    
+  }
 };
 </script>

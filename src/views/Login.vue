@@ -28,7 +28,7 @@
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
-                <v-form>
+                <v-form @submit.prevent="login">
                   <v-text-field
                     label="Username"
                     name="login"
@@ -43,12 +43,9 @@
                     
                     type="password"
                   ></v-text-field>
+                   <v-btn type="submit" color="primary">Login</v-btn>
                 </v-form>
               </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
-              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -58,9 +55,24 @@
 </template>
 
 <script>
+import { Auth } from "@/services"
   export default {
     props: {
       source: String,
     },
-  }
+    data(){
+      return{
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+    async login(){
+     let success = await Auth.login(this.email, this.password);
+     console.log("Rezultat prijave", success);
+      }
+    }
+  };
+
+  
 </script>

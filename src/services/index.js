@@ -136,6 +136,20 @@ let Events = {
         })
         return upcomingEvents
     }
-}
 
-export { Service, Events }
+
+}
+let Auth = {
+    async login(username, password){
+        let response=await Service.post("/auth",{
+            username: username,
+            password: password,
+        });
+
+        let user= response.data
+
+        localStorage.setItem("user", user);
+        return true;
+    },
+}
+export { Service, Events, Auth }
