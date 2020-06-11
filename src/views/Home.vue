@@ -6,7 +6,7 @@
             <v-card-title>{{event.event_name}}</v-card-title>
           </v-img>
 
-          <v-card-subtitle class="pb-0">Date: {{event.date}}     Price:{{event.event_price}}</v-card-subtitle>
+          <v-card-subtitle class="pb-0">Starts at: {{event.date}} <br>    Price:{{event.event_price}}</v-card-subtitle>
 
           <v-card-text class="text--primary">
             <div>Location: {{event.location}}</div>
@@ -27,7 +27,7 @@
                   <v-card-title>
                     {{event.event_name}}
                   </v-card-title>
-                  <v-card-subtitle class="pb-0">Date: {{event.date}}</v-card-subtitle>
+                  <v-card-subtitle class="pb-0">Starts at: {{event.date}}</v-card-subtitle>
                   <v-card-subtitle class="pb-0">Price:{{event.event_price}}</v-card-subtitle>
                   <v-card-text class="text--primary">
                   <div>Location: {{event.location}}</div>
