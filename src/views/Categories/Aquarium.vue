@@ -57,11 +57,11 @@ export default {
     
   }),
   created(){
-    this.getNightlife()
+    this.getAquariumEvents()
   },
   methods:{
-    async getNightlife(){
-      this.events = await Events.getNightlife()
+    async getAquariumEvents(){
+      this.events = await Events.getAquarium()
       console.log("All events", this.events)
     },
     goToEventPage(a){
