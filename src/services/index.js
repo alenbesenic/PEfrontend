@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 let Service = axios.create({
-    baseURL: "",
+    baseURL: "http://localhost:3000",
     timeout: 1000
 })
 
@@ -141,7 +141,7 @@ let Events = {
 }
 let Auth = {
     async login(username, password){
-        let response=await Service.post("/auth",{
+        let response=await Service.post('/auth',{
             username: username,
             password: password,
         });

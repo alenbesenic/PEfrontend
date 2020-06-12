@@ -28,12 +28,13 @@
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
-                <v-form @submit.prevent="login">
+                <v-form @submit="login">
                   <v-text-field
+                    id="username"
                     label="Username"
-                    name="login"
+                    name="username"
                     
-                    type="text"
+                    type="username"
                   ></v-text-field>
 
                   <v-text-field
@@ -62,13 +63,13 @@ import { Auth } from "@/services"
     },
     data(){
       return{
-        email: '',
+        username: '',
         password: ''
       }
     },
     methods: {
     async login(){
-     let success = await Auth.login(this.email, this.password);
+     let success = await Auth.login(this.username, this.password);
      console.log("Rezultat prijave", success);
       }
     }
