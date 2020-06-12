@@ -57,11 +57,11 @@ export default {
     
   }),
   created(){
-    this.getLibrary()
+    this.getMusicEvents()
   },
   methods:{
-    async getLibrary(){
-      this.events = await Events.getLibrary()
+    async getMusicEvents(){
+      this.events = await Events.getMusic()
       console.log("All events", this.events)
     },
     goToEventPage(a){

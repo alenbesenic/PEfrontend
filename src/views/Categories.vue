@@ -18,8 +18,11 @@ export default {
         return{
             categories:[
                 {title:'Outdor', picture:'https://www.tramontana-outdoor.com/wp-content/uploads/2019/04/2-4.jpg', route:'/Outdoor'},
-                {title:'Nightlife', picture:'https://www.cvitanic.info/wp-content/uploads/2015/01/nightlife-7.jpg',  route:'/Nightlife'},
-                {title:'Library', picture:'https://internova.hr/wp-content/uploads/2019/03/internova_public_library_01.jpg', route:'/Library'}
+                {title:'Aquarium', picture:'https://aquarium.hr/images/vijesti/koralji_normalna.jpg',  route:'/Aquarium'},
+                {title:'Entertainment', picture:'https://croatia.hr/sites/default/files/styles/image_full_width/public/2019-04/dani-antike-2018-2_tz_pula.jpg?itok=1d7UO4Ir', route:'/Entertainment'},
+                {title:'Music', picture:'https://media.timeout.com/images/105379302/630/472/image.jpg', route:'/Music'},
+                {title:'Restaurant', picture:'https://www.croatiaweek.com/wp-content/uploads/2018/09/22339339_1496372747078210_8843046998292750347_o.jpg', route:'/Restaurant'},
+                {title:'Museum', picture:'https://media-cdn.tripadvisor.com/media/photo-s/15/b6/a4/9f/museum-olei-histriae.jpg', route:'/Museum'}
             ]
         }
     }
