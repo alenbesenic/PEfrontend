@@ -30,6 +30,7 @@
               <v-card-text>
                 <v-form @submit.prevent="login">
                   <v-text-field
+                    v-model="email"
                     label="Username"
                     name="login"
                     
@@ -37,6 +38,7 @@
                   ></v-text-field>
 
                   <v-text-field
+                    v-model="password"
                     id="password"
                     label="Password"
                     name="password"
