@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid grid-list-md>
     <v-row>
         <v-card class="mx-auto" max-width="400" v-for="event in events" :key="event.id" outlined>
           <v-img class="white--text align-end" height="200px" :src="event.picture_url">
@@ -16,19 +16,19 @@
             <v-btn color="primary" @click="goToEventPage(event.event_url)">See Event</v-btn>
             <v-spacer></v-spacer>
             
-            <v-dialog :key="event.id" hide-overlay max-width="600">
+            <v-dialog :key="event.id" max-width="600px">
               <template v-slot:activator="{on}"> 
                 <v-btn v-on="on">
                   See More
                 </v-btn>
               </template>
-              <v-card class="mx-auto" max-width="600" max-height="600" outlined>
+              <v-card  max-width="600" max-height="1000px" outlined>
                 <v-img class="white--text align-end" :src="event.picture_url" contain></v-img>
                   <v-card-title>
                     {{event.event_name}}
                   </v-card-title>
-                  <v-card-subtitle class="pb-0">Starts at: {{event.date}}</v-card-subtitle>
-                  <v-card-subtitle class="pb-0">Price:{{event.event_price}}</v-card-subtitle>
+                  <v-card-subtitle class="pb-0">Starts at: {{event.date}}<br>Price:{{event.event_price}} </v-card-subtitle>
+                  
                   <v-card-text class="text--primary">
                   <div>Location: {{event.location}}</div>
                     <br>
@@ -54,7 +54,6 @@ export default {
   },
   data:()=>({
     events:[],
-    
   }),
   created(){
     this.getEvents()
