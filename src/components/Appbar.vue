@@ -25,8 +25,8 @@
                     <v-list-item-content>
                         <v-list-item-title class="white--text">
                             <v-list-item-icon>
-                                <v-icon color="white">mdi-account-details</v-icon>
-                                MyAccount
+                                <v-icon v-if= "auth.authenticated" color="white"></v-icon>
+                                {{auth.userEmail}}
                             </v-list-item-icon>
                         </v-list-item-title>
                         
@@ -51,10 +51,12 @@
 </template>
 
 <script>
+import { Auth } from '@/services';
 export default {
     data(){
         return{
             drawer:false,
+            auth: Auth.state,
             links:[
                 {icon:'mdi-calendar', text:'Upcoming Events', route:'/UpcomingEvents'},
                 {icon:'mdi-close-circle', text:'Canceled Events', route:'/CanceledEvents'},

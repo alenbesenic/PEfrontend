@@ -208,7 +208,7 @@ let Auth = {
 
         let user = response.data
 
-        localStorage.setItem("user", user);
+        localStorage.setItem("user", JSON.stringify(user));
         return true;
     },
     async signup(username, password) {
@@ -218,8 +218,30 @@ let Auth = {
         })
         let user = response.data
 
-        localStorage.setItem("user", user);
+        localStorage.setItem("user", JSON.stringify(user));
         return true;
+    },
+    getUser(){
+        return JSON.parse(localStorage.getItem('user'));
+    },
+    authenticated(){
+        let user = Auth.getUser()
+        if (user && user.token){
+            return true
+        }
+        return false
+    },
+    state:{
+        get authenticated(){
+            return Auth.authenticated();
+        },
+        get userEmail(){
+            let user = Auth.getUser()
+            if (user){
+                return user.username;
+            }
+            return Auth.getUser();
+        }
     }
 }
 export { Service, Events, Auth }
