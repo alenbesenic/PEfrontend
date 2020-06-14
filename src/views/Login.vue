@@ -73,6 +73,10 @@ import { Auth } from "@/services"
     async login(){
      let success = await Auth.login(this.username, this.password);
      console.log("Rezultat prijave", success);
+
+     if (success == true){
+       this.$router.push({name : 'Home'})
+     }
       }
     }
   };

@@ -82,6 +82,10 @@ import {Auth} from '../services'
       async signup(){
         let success = await Auth.signup(this.username, this.password);
         console.log("Rezultat registracije", success);
+
+         if (success == true){
+       this.$router.push({name : 'Login'})
+     }
       }
     }
   }
