@@ -59,7 +59,7 @@ export default {
             auth: Auth.state,
             links:[
                 {icon:'mdi-calendar', text:'Upcoming Events', route:'/UpcomingEvents'},
-                {icon:'mdi-close-circle', text:'Canceled Events', route:'/CanceledEvents'},
+                {icon:'mdi-close-circle', text:'Past Events', route:'/PastEvents'},
                 {icon:'mdi-format-list-checkbox', text:'Categories', route:'/Categories'}
             ],
         }

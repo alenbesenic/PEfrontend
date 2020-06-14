@@ -55,11 +55,11 @@ export default {
     
   }),
   created(){
-    this.getCanceled()
+    this.getPast()
   },
   methods:{
-    async getCanceled(){
-      this.events = await Events.getCanceledEvents()
+    async getPast(){
+      this.events = await Events.getPastEvents()
       console.log("Canceled", this.events)
     },
     goToEventPage(a){

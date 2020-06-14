@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import UpcomingEvents from '../views/UpcomingEvents.vue'
-import CanceledEvents from '../views/CanceledEvents.vue'
+import PastEvents from '../views/PastEvents.vue'
 import Categories from '../views/Categories.vue'
 import Aquarium from '../views/Categories/Aquarium.vue'
 import Outdoor from '../views/Categories/Outdoor.vue'
@@ -44,9 +44,9 @@ const routes = [{
         component: UpcomingEvents
     },
     {
-        path: '/CanceledEvents',
-        name: 'CanceledEvents',
-        component: CanceledEvents
+        path: '/PastEvents',
+        name: 'PastEvents',
+        component: PastEvents
     },
     {
         path: '/Categories',
