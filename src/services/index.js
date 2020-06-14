@@ -211,5 +211,15 @@ let Auth = {
         localStorage.setItem("user", user);
         return true;
     },
+    async signup(username, password) {
+        let response = await Service.post("/users", {
+            username: username,
+            password: password
+        })
+        let user = response.data
+
+        localStorage.setItem("user", user);
+        return true;
+    }
 }
 export { Service, Events, Auth }

@@ -30,6 +30,7 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
+                    v-model="username"
                     label="Username"
                     name="login"
                     
@@ -37,6 +38,7 @@
                   ></v-text-field>
 
                   <v-text-field
+                    v-model="password"
                     id="password"
                     label="Password"
                     name="password"
@@ -54,7 +56,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Register</v-btn>
+                <v-btn color="primary" @click="signup">Register</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -65,9 +67,22 @@
 </template>
 
 <script>
+import {Auth} from '../services'
   export default {
     props: {
       source: String,
     },
+    data(){
+      return{
+        username:'',
+        password:''
+      }
+    },
+    methods:{
+      async signup(){
+        let success = await Auth.signup(this.username, this.password);
+        console.log("Rezultat registracije", success);
+      }
+    }
   }
 </script>
