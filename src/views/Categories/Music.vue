@@ -22,7 +22,7 @@
                   See More
                 </v-btn>
               </template>
-              <v-card class="mx-auto" max-width="600" max-height="600" outlined>
+              <v-card max-width="600px" max-height="1000px" outlined>
                 <v-img class="white--text align-end" :src="event.picture_url" contain></v-img>
                   <v-card-title>
                     {{event.event_name}}

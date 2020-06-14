@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
     <v-row>
-        <v-card class="mx-auto" router-link :to="cat.route" max-width="400" v-for="cat in categories" :key="cat.title" outlined>
+        <v-card class="mx-auto " router-link :to="cat.route" max-width="400px" v-for="cat in categories" :key="cat.title" outlined>
             <v-img :src="cat.picture" ></v-img>
          <v-card-title>
              {{cat.title}}
