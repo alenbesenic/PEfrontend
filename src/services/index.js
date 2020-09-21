@@ -230,6 +230,10 @@ let Auth = {
             return true
         }
         return false
+    
+    },
+    logout(){
+        localStorage.removeItem('user');
     },
     state:{
         get authenticated(){

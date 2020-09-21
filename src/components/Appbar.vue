@@ -27,6 +27,7 @@
                             <v-list-item-icon>
                                 <v-icon v-if= "auth.authenticated" color="white"></v-icon>
                                 {{auth.userEmail}}
+                                <v-btn v-if= "auth.authenticated" color="primary" @click="logout">Logout</v-btn>
                             </v-list-item-icon>
                         </v-list-item-title>
                         
@@ -62,6 +63,12 @@ export default {
                 {icon:'mdi-close-circle', text:'Canceled Events', route:'/CanceledEvents'},
                 {icon:'mdi-format-list-checkbox', text:'Categories', route:'/Categories'}
             ],
+        }
+    },
+    methods: {
+        logout(){
+            Auth.logout();
+            this.$router.go();
         }
     }
 }
