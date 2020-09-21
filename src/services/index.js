@@ -197,6 +197,26 @@ let Events = {
 
     },
 
+    async getFreeEvents(price) {
+        price = "Free"
+        let response = await Service.get(`/events?price=${price}`)
+        let freeEvents = response.data.map(doc => {
+            return {
+                id: doc.id,
+                date: (new Date(doc.Date_Start)).toLocaleDateString(),
+                description: doc.Description,
+                event_name: doc.Event_Name,
+                event_price: doc.Event_Price,
+                event_url: doc.Event_URL,
+                category: doc.Category,
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
+            }
+        })
+        return freeEvents
+    },
+
 
 }
 let Auth = {

@@ -12,6 +12,7 @@ import Entertainment from '../views/Categories/Entertainment.vue'
 import Music from '../views/Categories/Music.vue'
 import Restaurant from '../views/Categories/Restaurant.vue'
 import Museum from '../views/Categories/Museum.vue'
+import FreeEvents from '../views/FreeEvents.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -82,6 +83,11 @@ const routes = [{
         path: '/Museum',
         name: 'Museum',
         component: Museum
+    },
+    {
+        path: '/FreeEvents',
+        name: 'FreeEvents',
+        component: FreeEvents
     },
     {
         path: '/:id',
