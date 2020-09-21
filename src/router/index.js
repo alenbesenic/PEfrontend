@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import UpcomingEvents from '../views/UpcomingEvents.vue'
-import CanceledEvents from '../views/CanceledEvents.vue'
+import PastEvents from '../views/PastEvents.vue'
 import Categories from '../views/Categories.vue'
 import Aquarium from '../views/Categories/Aquarium.vue'
 import Outdoor from '../views/Categories/Outdoor.vue'
@@ -12,6 +12,7 @@ import Entertainment from '../views/Categories/Entertainment.vue'
 import Music from '../views/Categories/Music.vue'
 import Restaurant from '../views/Categories/Restaurant.vue'
 import Museum from '../views/Categories/Museum.vue'
+import FreeEvents from '../views/FreeEvents.vue'
 Vue.use(VueRouter)
 
 const routes = [{
@@ -44,9 +45,9 @@ const routes = [{
         component: UpcomingEvents
     },
     {
-        path: '/CanceledEvents',
-        name: 'CanceledEvents',
-        component: CanceledEvents
+        path: '/PastEvents',
+        name: 'PastEvents',
+        component: PastEvents
     },
     {
         path: '/Categories',
@@ -82,6 +83,11 @@ const routes = [{
         path: '/Museum',
         name: 'Museum',
         component: Museum
+    },
+    {
+        path: '/FreeEvents',
+        name: 'FreeEvents',
+        component: FreeEvents
     },
     {
         path: '/:id',

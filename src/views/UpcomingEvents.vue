@@ -1,7 +1,7 @@
 <template>
      <v-container fluid>
     <v-row>
-        <v-card max-width="400" v-for="event in events" :key="event.id" outlined>
+        <v-card class="mx-auto my-4" max-width="400" v-for="event in events" :key="event.id" outlined>
           <v-img class="white--text align-end" height="200px" :src="event.picture_url">
             <v-card-title>{{event.event_name}}</v-card-title>
           </v-img>

@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+    <v-container fluid>
     <v-row>
-        <v-card class="mx-auto" max-width="400" v-for="event in events" :key="event.id" outlined>
+        <v-card class="mx-auto my-4" max-width="400" v-for="event in events" :key="event.id" outlined>
           <v-img class="white--text align-end" height="200px" :src="event.picture_url">
             <v-card-title>{{event.event_name}}</v-card-title>
           </v-img>
@@ -44,11 +44,9 @@
 </template>
 
 <script>
-import {Events} from '@/services'
-
+import {Events} from '../services'
 
 export default {
-  name: 'Home',
   components: {
     
   },
@@ -57,12 +55,12 @@ export default {
     
   }),
   created(){
-    this.getOutdoor()
+    this.getPast()
   },
   methods:{
-    async getOutdoor(){
-      this.events = await Events.getOutdoor()
-      console.log("All events", this.events)
+    async getPast(){
+      this.events = await Events.getPastEvents()
+      console.log("Canceled", this.events)
     },
     goToEventPage(a){
       window.open(a)

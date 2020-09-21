@@ -138,14 +138,14 @@ let Events = {
         return events;
     },
 
-    async getCanceledEvents(status) {
-        status = "Canceled"
+    async getPastEvents(status) {
+        status = "Done"
         let response = await Service.get(`/events?status=${status}`)
         console.log(response.data)
         let canceled = response.data.map(doc => {
             return {
                 id: doc._id,
-                date: doc.Date_Start,
+                date: (new Date(doc.Date_Start)).toLocaleDateString(),
                 description: doc.Description,
                 event_name: doc.Event_Name,
                 event_price: doc.Event_Price,
@@ -197,6 +197,26 @@ let Events = {
 
     },
 
+    async getFreeEvents(price) {
+        price = "Free"
+        let response = await Service.get(`/events?price=${price}`)
+        let freeEvents = response.data.map(doc => {
+            return {
+                id: doc.id,
+                date: (new Date(doc.Date_Start)).toLocaleDateString(),
+                description: doc.Description,
+                event_name: doc.Event_Name,
+                event_price: doc.Event_Price,
+                event_url: doc.Event_URL,
+                category: doc.Category,
+                status: doc.Status,
+                picture_url: doc.PictureURL,
+                location: doc.Location
+            }
+        })
+        return freeEvents
+    },
+
 
 }
 let Auth = {
@@ -221,12 +241,12 @@ let Auth = {
         localStorage.setItem("user", JSON.stringify(user));
         return true;
     },
-    getUser(){
+    getUser() {
         return JSON.parse(localStorage.getItem('user'));
     },
-    authenticated(){
+    authenticated() {
         let user = Auth.getUser()
-        if (user && user.token){
+        if (user && user.token) {
             return true
         }
         return false
@@ -235,13 +255,13 @@ let Auth = {
     logout(){
         localStorage.removeItem('user');
     },
-    state:{
-        get authenticated(){
+    state: {
+        get authenticated() {
             return Auth.authenticated();
         },
-        get userEmail(){
+        get userEmail() {
             let user = Auth.getUser()
-            if (user){
+            if (user) {
                 return user.username;
             }
             return Auth.getUser();

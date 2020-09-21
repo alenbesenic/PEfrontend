@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
     <v-row>
-        <v-card class="mx-auto" max-width="400" v-for="event in events" :key="event.id" outlined>
+        <v-card class="mx-auto my-4" max-width="400" v-for="event in events" :key="event.id" outlined>
           <v-img class="white--text align-end" height="200px" :src="event.picture_url">
             <v-card-title>{{event.event_name}}</v-card-title>
           </v-img>
@@ -55,12 +55,12 @@ export default {
     
   }),
   created(){
-    this.getCanceled()
+    this.getFree()
   },
   methods:{
-    async getCanceled(){
-      this.events = await Events.getCanceledEvents()
-      console.log("Canceled", this.events)
+    async getFree(){
+      this.events = await Events.getFreeEvents()
+      console.log("Free", this.events)
     },
     goToEventPage(a){
       window.open(a)
